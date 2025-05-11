@@ -344,7 +344,7 @@ export const createCustomTheme = (mode: ThemeMode): ThemeOptions => {
                 padding: `${theme.spacing(3.75)} ${theme.spacing(0)}`,
                 fontSize: theme.spacing(4),
                 fontWeight: 500,
-                zIndex: 2,             
+                zIndex: 2,
               },
               "&.Mui-focused": {
                 ".MuiInputBase-input": {
@@ -405,6 +405,28 @@ export const createCustomTheme = (mode: ThemeMode): ThemeOptions => {
           }),
         },
       },
+      MuiCheckbox: {
+        styleOverrides: {
+          root: () => ({
+            padding: 0,
+            "&.Mui-disabled": {
+              pointerEvents: 'auto',
+              cursor: 'not-allowed'
+            }
+          })
+        }
+      },
+      MuiRadio: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            padding: 0,
+            "&.Mui-disabled": {
+              pointerEvents: 'auto',
+              cursor: 'not-allowed'
+            }
+          })
+        }
+      }
     },
   });
 };
